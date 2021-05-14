@@ -13,7 +13,7 @@ class contextUtil {
 
         private val prefName = "TestPref"
 
-//        자동 로그인 설정
+//        오타를 방지하기 위해 자주 사용하는 단어 저장하기
 
         private val AUTO_LOGIN = "AUTO_LOGIN"
 
@@ -24,6 +24,17 @@ class contextUtil {
             val pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
 
             pref.edit().putBoolean(AUTO_LOGIN, autoLogin).apply()
+        }
+
+//        저장된 내용 불러오기
+
+        fun getAutoLogin(context: Context) : Boolean {
+
+            val pref = context.getSharedPreferences((prefName, Context.MODE_PRIVATE))
+
+//            저장된 데이터가 있으면 자동로그인, 없으면 안함
+
+            return pref.getBoolean(AUTO_LOGIN, false)
         }
     }
 }
