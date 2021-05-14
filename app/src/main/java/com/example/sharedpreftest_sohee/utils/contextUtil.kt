@@ -19,7 +19,7 @@ class contextUtil {
 
 //        자동 로그인 저장하기
 
-        fun stAutoLogin(context: Context, autoLogin: Boolean) {
+        fun setAutoLogin(context: Context, autoLogin: Boolean) {
 
             val pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
 
@@ -30,7 +30,7 @@ class contextUtil {
 
         fun getAutoLogin(context: Context) : Boolean {
 
-            val pref = context.getSharedPreferences((prefName, Context.MODE_PRIVATE))
+            val pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
 
 //            저장된 데이터가 있으면 자동로그인, 없으면 안함
 
